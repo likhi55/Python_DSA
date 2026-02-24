@@ -94,3 +94,16 @@ class LinkedList:
         temp.next = node
         self.length += 1
         return True
+
+    def remove(self, index):
+        if index < 0 or index >= self.length:
+            return None
+        elif index == self.length - 1:
+            return self.pop()
+        elif index == 0:
+            return self.pop_first()
+        temp = self.get(index - 1)
+        node = self.get(index)
+        temp.next = node.next
+        self.length -= 1
+        return node
