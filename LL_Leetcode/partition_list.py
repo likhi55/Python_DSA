@@ -224,3 +224,32 @@ def test_partition_list():
 
 # Run the test function
 test_partition_list()
+
+
+"""
+SOLUTION:
+
+def partition_list(self, x):
+        if not self.head:
+            return None
+    
+        dummy1 = Node(0)
+        dummy2 = Node(0)
+        prev1 = dummy1
+        prev2 = dummy2
+        current = self.head
+    
+        while current:
+            if current.value < x:
+                prev1.next = current
+                prev1 = current
+            else:
+                prev2.next = current
+                prev2 = current
+            current = current.next
+    
+        prev1.next = dummy2.next
+        prev2.next = None
+    
+        self.head = dummy1.next
+"""
